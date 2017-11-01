@@ -1,0 +1,17 @@
+{ "users": [{
+    "name": "Michael W. Brooks"
+  }],
+
+  "projects": [{
+    "name": "Swindle",
+    "creators": "Pink Floyd",
+    "description": "We take your money and 'donate' it.",
+    "fundGoal": "All of your money",
+    "doWithFunds": "drugs",
+    "perks": "hahahahaha",
+    "category": "ponzi schemes",
+    "type": "'charity...'",
+    "id": 1
+    }, {
+  }]
+}

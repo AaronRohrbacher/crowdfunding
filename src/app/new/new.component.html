@@ -1,0 +1,56 @@
+<div>
+  <div>
+    <label>Project Name:</label>
+    <br>
+    <input #newName>
+  </div>
+
+  <div>
+    <label>Creator(s):</label>
+    <br>
+    <input #newCreators>
+  </div>
+
+  <div>
+    <label>Description:</label>
+    <br>
+    <textarea #newDescription></textarea>
+  </div>
+
+  <div>
+    <label>Fund Goal:</label>
+    <br>
+    <input #newFundGoal>
+  </div>
+
+  <div>
+    <label>What shall become of this dirty-ass money you're stealing?</label>
+    <br>
+    <input #newDoWithFunds>
+  </div>
+
+  <div>
+    <label>Perks:</label>
+    <br>
+    <input #newPerks>
+  </div>
+
+  <div>
+    <label>Category:</label>
+    <br>
+    <input #newCategory>
+  </div>
+
+  <div>
+    <label>Type of project:</label>
+    <select #newType>
+      <option value="charity">Charity (right...)</option>
+      <option value="scheme">Ponzi Scheme</option>
+      <option value="stealing">I'm straight up just stealing money</option>
+    </select>
+  </div>
+
+
+
+  <button class="btn btn-success" (click)="submitForm(newName.value, newCreators.value, newDescription.value, newFundGoal.value, newDoWithFunds.value, newPerks.value, newCategory.value, newType.value); newName.value=''; newCreators.value=''; newDescription.value=''; newFundGoal.value=''; newDoWithFunds.value=''; newPerks.value=''; newType.value=''; newType.value=''">Add</button>
+</div>
