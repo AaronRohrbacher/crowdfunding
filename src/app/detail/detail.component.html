@@ -1,3 +1,10 @@
-<p>
-  detail works!
-</p>
+<h3>{{(projectToDisplay | async)?.name}}</h3>
+<p>{{(projectToDisplay | async)?.creators}}</p>
+<p>{{(projectToDisplay | async)?.description}}</p>
+<p>{{(projectToDisplay | async)?.fundGoal}}</p>
+<p>{{(projectToDisplay | async)?.doWithFunds}}</p>
+<p>{{(projectToDisplay | async)?.perks}}</p>
+<p>{{(projectToDisplay | async)?.category}}</p>
+<p>{{(projectToDisplay | async)?.type}}</p>
+<input #amount>
+<button (click)="fundEvent(amount.value)">GO FUND THEM!</button>

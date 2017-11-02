@@ -19,20 +19,25 @@ export class DatabaseService {
   }
 
   getProjectById(id: string){
-    return this.database.object('list/' + id);
+    return this.database.object('projects/' + id);
   }
 
   editProject(project) {
-  var selectedProject = this.getProjectById(selectedProject.$key);
-  project.update({title: selectedProject.title,
-                              artist: selectedProject.artist,
-                              description: selectedProject.description});
+  var selectedProject = this.getProjectById(project.$key);
+  selectedProject.update({name: project.name,
+                  creators: project.creators,
+                  description: project.description,
+                  fundGoal: project.fundGoal,
+                  doWithFunds: project.doWithFunds,
+                  perks: project.perks,
+                  category: project.category,
+                  type: project.type
+                });
 }
 
 deleteProject(project){
-  var projectEntryInFirebase = this.getProjectById(project.$key);
-  projectEntryInFirebase.remove();
+  let firebaseProject = this.getProjectById(project.$key);
+  firebaseProject.remove();
 }
-
 
 }

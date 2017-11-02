@@ -1,14 +1,15 @@
-<div  *ngFor="let project of projects | async">
-  <h3>{{project.name}}</h3>
+<label>Filter By:</label>
+<select (change)="rangeChange($event.target.value)">
+  <option value="charity">Charity (right...)</option>
+  <option value="scheme">Ponzi Scheme</option>
+  <option value="stealing">I'm straight up just stealing money</option>
+  </select>
+
+<div *ngFor="let project of projects | async | filter: range">
+  <h3 (click)="viewDetail(project)">{{project.name}}</h3>
   <p>{{project.creators}}</p>
-  <p>{{project.description}}</p>
-  <p>{{project.fundGoal}}</p>
-  <p>{{project.doWithFunds}}</p>
-  <p>{{project.perks}}</p>
-  <p>{{project.category}}</p>
-  <p>{{project.type}}</p>
   <hr>
   <div *ngIf="currentRoute === '/admin'">
-    <button>Delete!</button>
+    <app-edit [selectedProject]="project"></app-edit>
   </div>
 </div>
